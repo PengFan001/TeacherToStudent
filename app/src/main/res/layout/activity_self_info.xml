@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/image1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/ic_launcher"/>
+
+        <TextView
+            android:paddingLeft="10dp"
+            android:id="@+id/name1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="姓名"
+            android:textSize="25sp"
+            android:layout_below="@+id/image1"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:paddingLeft="10dp"
+            android:id="@+id/phoneNumber1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="手机号"
+            android:textSize="25sp"
+            android:layout_below="@+id/name1"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:paddingLeft="10dp"
+            android:id="@+id/gender1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="性别"
+            android:textSize="25sp"
+            android:layout_below="@+id/phoneNumber1"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:paddingLeft="10dp"
+            android:id="@+id/teacherAge1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="教龄"
+            android:textSize="25sp"
+            android:layout_below="@+id/gender1"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:paddingLeft="10dp"
+            android:id="@+id/zone1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="所在地"
+            android:textSize="25sp"
+            android:layout_below="@+id/teacherAge1"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:paddingLeft="10dp"
+            android:id="@+id/subject1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="科目"
+            android:textSize="25sp"
+            android:layout_below="@+id/zone1"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:paddingLeft="10dp"
+            android:id="@+id/grade1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="年级"
+            android:textSize="25sp"
+            android:layout_below="@+id/subject1"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:paddingLeft="10dp"
+            android:id="@+id/price1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="价格"
+            android:textSize="25sp"
+            android:layout_below="@+id/grade1"
+            android:layout_marginTop="10dp"/>
+
+    </RelativeLayout>
+
+</ScrollView>

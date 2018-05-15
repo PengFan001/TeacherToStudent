@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context="com.tts.RegisterActivity">
+
+    <RelativeLayout
+        android:id="@+id/rly"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/strok_btn"
+            android:hint="姓名"
+            android:paddingLeft="10dp"
+            android:maxLines="1"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/phoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/strok_btn"
+            android:layout_below="@+id/name"
+            android:layout_marginTop="10dp"
+            android:hint="手机号"
+            android:paddingLeft="10dp"
+            android:maxLines="1"
+            android:inputType="number"/>
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/strok_btn"
+            android:layout_below="@+id/phoneNumber"
+            android:layout_marginTop="10dp"
+            android:hint="密码"
+            android:paddingLeft="10dp"
+            android:maxLines="1"
+            android:inputType="textPassword"/>
+
+        <EditText
+            android:id="@+id/identityPassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/strok_btn"
+            android:layout_below="@+id/password"
+            android:layout_marginTop="10dp"
+            android:hint="确认密码"
+            android:paddingLeft="10dp"
+            android:maxLines="1"
+            android:inputType="textPassword"/>
+
+        <RadioGroup
+            android:id="@+id/gender"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/identityPassword"
+            android:layout_marginTop="10dp">
+
+            <RadioButton
+                android:id="@+id/man"
+                android:layout_width="63dp"
+                android:layout_height="50dp"
+                android:background="@drawable/select_radiobtn"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="男"
+                android:layout_marginRight="30dp"
+                android:textColor="@color/colorBalck"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/woman"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:background="@drawable/select_radiobtn"
+                android:button="@null"
+                android:gravity="center"
+                android:text="女"
+                android:layout_marginLeft="30dp"
+                android:textColor="@color/colorBalck"
+                android:textSize="18sp" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/teachAge"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/strok_btn"
+            android:layout_below="@+id/gender"
+            android:layout_marginTop="10dp"
+            android:hint="教龄"
+            android:paddingLeft="10dp"
+            android:maxLines="1"
+            android:inputType="number"/>
+        <EditText
+            android:id="@+id/zone"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/strok_btn"
+            android:layout_below="@+id/teachAge"
+            android:layout_marginTop="10dp"
+            android:hint="所在地"
+            android:paddingLeft="10dp"
+            android:maxLines="1"
+            android:inputType="text"/>
+
+        <!--<EditText-->
+            <!--android:id="@+id/wechat"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_below="@+id/zone"-->
+            <!--android:layout_marginTop="12dp"-->
+            <!--android:background="@drawable/strok_btn"-->
+            <!--android:hint="微信账号"-->
+            <!--android:inputType="number"-->
+            <!--android:maxLines="1"-->
+            <!--android:paddingLeft="10dp" />-->
+
+        <!--<EditText-->
+            <!--android:id="@+id/alipay"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:background="@drawable/strok_btn"-->
+            <!--android:layout_below="@+id/wechat"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:hint="支付宝账号"-->
+            <!--android:paddingLeft="10dp"-->
+            <!--android:maxLines="1"-->
+            <!--android:inputType="number"/>-->
+
+        <Spinner
+            android:id="@+id/subjectSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/zone"
+            android:background="@drawable/strok_btn"
+            android:layout_marginTop="10dp"
+            android:entries="@array/subject_array">
+        </Spinner>
+
+
+        <Spinner
+            android:id="@+id/gradeSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/subjectSpinner"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/strok_btn"
+            android:entries="@array/grade_array">
+        </Spinner>
+
+        <Spinner
+            android:id="@+id/priceSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/gradeSpinner"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/strok_btn"
+            android:entries="@array/price_array"></Spinner>
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/priceSpinner"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/select_btn"
+            android:text="注册"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+</ScrollView>

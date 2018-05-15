@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">TeacherToStudent</string>
+    <string-array name="subject_array">
+        <item>语文</item>
+        <item>数学</item>
+        <item>英语</item>
+        <item>物理</item>
+        <item>化学</item>
+        <item>地理</item>
+        <item>生物</item>
+        <item>政治</item>
+        <item>历史</item>
+    </string-array>
+
+    <string-array name="grade_array">
+        <item>高一</item>
+        <item>高二</item>
+        <item>高三</item>
+        <item>初一</item>
+        <item>初二</item>
+        <item>初三</item>
+    </string-array>
+
+    <string-array name="price_array">
+        <item>99</item>
+        <item>199</item>
+        <item>299</item>
+    </string-array>
+</resources>
