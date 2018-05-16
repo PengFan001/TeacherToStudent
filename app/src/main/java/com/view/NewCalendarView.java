@@ -108,7 +108,7 @@ public class NewCalendarView extends LinearLayout {
             calendar.add(Calendar.DAY_OF_MONTH, 1);
         }
 
-        CalendarAdapter calendarAdapter = new CalendarAdapter(getContext(), cells);
+        CalendarAdapter calendarAdapter = new CalendarAdapter(getContext(), cells, curDate);
         grid.setAdapter(calendarAdapter);
 
     }

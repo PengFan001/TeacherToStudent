@@ -14,6 +14,7 @@ import com.tts.R;
 import com.view.CalenderDayView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -23,9 +24,11 @@ import java.util.Date;
 public class CalendarAdapter extends ArrayAdapter {
 
     LayoutInflater inflater;
+    private Calendar cusDate = null;
 
-    public CalendarAdapter(@NonNull Context context, ArrayList<Date> days) {
+    public CalendarAdapter(@NonNull Context context, ArrayList<Date> days, Calendar calendar) {
         super(context, R.layout.calender_day_view, days);
+        this.cusDate = calendar;
         inflater = LayoutInflater.from(context);
     }
 
@@ -36,7 +39,9 @@ public class CalendarAdapter extends ArrayAdapter {
         if(convertView == null)
             convertView = inflater.inflate(R.layout.calender_day_view, parent, false);
         Date date = (Date) getItem(position);
-        Date now = new Date();
+//        Date now = new Date();
+        Date now = cusDate.getTime();
+        Date today = new Date();
         int day = date.getDate();
 
         ((TextView)convertView).setText(String.valueOf(day));
@@ -45,9 +50,8 @@ public class CalendarAdapter extends ArrayAdapter {
             ((TextView)convertView).setTextColor(Color.parseColor("#000000"));
         else
             ((TextView)convertView).setTextColor(Color.parseColor("#CCCCCC"));
-        if(now.getDate() == date.getDate() && now.getMonth() == date.getMonth() && now.getYear() == date.getYear())
+        if(today.getDate() == date.getDate() && today.getMonth() == date.getMonth() && today.getYear() == date.getYear())
             ((CalenderDayView)convertView).isToday = true;
-
 
         return convertView;
     }
