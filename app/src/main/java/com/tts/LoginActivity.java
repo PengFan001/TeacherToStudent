@@ -60,11 +60,11 @@ public class LoginActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-//                startActivity(intent);
-                if(isLogin)
-                    startActivity(intent);
-                else
-                    Toast.makeText(LoginActivity.this, "手机号或密码错误", Toast.LENGTH_LONG).show();
+                startActivity(intent);
+//                if(isLogin)
+//                    startActivity(intent);
+//                else
+//                    Toast.makeText(LoginActivity.this, "手机号或密码错误", Toast.LENGTH_LONG).show();
             }
         });
 
