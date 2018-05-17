@@ -39,7 +39,6 @@ public class CalendarAdapter extends ArrayAdapter {
         if(convertView == null)
             convertView = inflater.inflate(R.layout.calender_day_view, parent, false);
         Date date = (Date) getItem(position);
-//        Date now = new Date();
         Date now = cusDate.getTime();
         Date today = new Date();
         int day = date.getDate();
@@ -52,6 +51,12 @@ public class CalendarAdapter extends ArrayAdapter {
             ((TextView)convertView).setTextColor(Color.parseColor("#CCCCCC"));
         if(today.getDate() == date.getDate() && today.getMonth() == date.getMonth() && today.getYear() == date.getYear())
             ((CalenderDayView)convertView).isToday = true;
+
+//        for(int i=0;i<dates.size();i++){
+//            Date eventDay = dates.get(i);
+//            if(eventDay.getDate() == date.getDate() && eventDay.getMonth() == date.getMonth() && eventDay.getYear() == date.getYear())
+//                ((CalenderDayView)convertView).isToday = true;
+//        }
 
         return convertView;
     }

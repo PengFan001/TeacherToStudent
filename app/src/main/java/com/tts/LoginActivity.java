@@ -51,20 +51,20 @@ public class LoginActivity extends AppCompatActivity {
                 intent.putExtra("port", port);
                 teacher.setPhoneNumber(phone_number.getText().toString());
                 teacher.setPassword(password.getText().toString());
-                isLogin();
 
                 //此处很重要，设置等待后才能实现数据的同步
                 try {
+                    isLogin();
                     Thread.sleep(300);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-
-                startActivity(intent);
-//                if(isLogin)
-//                    startActivity(intent);
-//                else
-//                    Toast.makeText(LoginActivity.this, "手机号或密码错误", Toast.LENGTH_LONG).show();
+//
+//                startActivity(intent);
+                if(isLogin)
+                    startActivity(intent);
+                else
+                    Toast.makeText(LoginActivity.this, "手机号或密码错误", Toast.LENGTH_LONG).show();
             }
         });
 

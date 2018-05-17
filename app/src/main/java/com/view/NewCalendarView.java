@@ -6,14 +6,13 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import com.entities.CalendarAdapter;
 import com.tts.R;
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -31,7 +30,7 @@ public class NewCalendarView extends LinearLayout {
 
     private Calendar curDate = Calendar.getInstance();
     public String displayFormat = null;
-
+    public NewCalendarListener listener;
 
     public NewCalendarView(Context context) {
         super(context);
@@ -46,7 +45,6 @@ public class NewCalendarView extends LinearLayout {
         super(context, attrs, defStyleAttr);
         initControl(context, attrs);
     }
-
 
 
     private void initControl(Context context, @Nullable AttributeSet attrs) {
@@ -110,8 +108,21 @@ public class NewCalendarView extends LinearLayout {
 
         CalendarAdapter calendarAdapter = new CalendarAdapter(getContext(), cells, curDate);
         grid.setAdapter(calendarAdapter);
-
+        grid.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                if (listener == null)
+                    return false;
+                else {
+                    listener.onItemLongPress((Date) parent.getItemAtPosition(position));
+                    return true;
+                }
+            }
+        });
     }
 
+    public interface NewCalendarListener{
+        void onItemLongPress(Date day);
+    }
 
 }

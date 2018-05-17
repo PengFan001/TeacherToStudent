@@ -41,7 +41,6 @@ public class RegisterActivity extends AppCompatActivity {
     private String gender = "男";
     private Button submit;
     private Teacher teacher;
-//    private ArrayList<Teacher> teacherArrayList = new ArrayList<Teacher>();
     private String name, phoneNumber, password, identityPassword, subject, grade, zone;
     private int price, teacherAge;
     @Override
@@ -57,12 +56,11 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 initValues();
-                if(!isNull(name, phoneNumber, password, identityPassword, gender)){
+                if(!isNull(name, phoneNumber, password, identityPassword, gender, zone)){
                     if(identityPassword(password, identityPassword)){
-                        postTeacherList();
-
                         //此处很重要，设置等待后才能实现数据的同步
                         try {
+                            postTeacherList();
                             Thread.sleep(300);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
@@ -84,7 +82,7 @@ public class RegisterActivity extends AppCompatActivity {
                         Toast.makeText(RegisterActivity.this, "密码不一致", Toast.LENGTH_LONG).show();
                 }
                 else
-                    Toast.makeText(RegisterActivity.this, "出教龄外的信息不能为空", Toast.LENGTH_LONG).show();
+                    Toast.makeText(RegisterActivity.this, "除教龄以外信息不能为空且确保手机号的合法性", Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -157,17 +155,22 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     //判断输入的信息是否为空
-    private boolean isNull(String name, String phoneNumber, String password, String identityPassword, String gender){
+    private boolean isNull(String name, String phoneNumber, String password, String identityPassword, String gender, String zone){
         boolean isNull = false;
+        int length = phoneNumber.length();
+        if (length != 11)
+            isNull = true;
         if(name.equals(""))
             isNull = true;
-        if(password == "")
+        if(password.equals(""))
             isNull = true;
         if(phoneNumber.equals(""))
             isNull = true;
         if(identityPassword.equals(""))
             isNull = true;
         if(gender.equals(""))
+            isNull = true;
+        if (zone.equals(""))
             isNull = true;
         return isNull;
     }
@@ -189,6 +192,7 @@ public class RegisterActivity extends AppCompatActivity {
                         String respondData = response.body().string();
                         resultMessage = gson.fromJson(respondData, String.class);
                     }
+
                 }catch (Exception e){
                     e.printStackTrace();
                 }

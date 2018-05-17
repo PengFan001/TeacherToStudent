@@ -49,10 +49,8 @@ public class MainActivity extends AppCompatActivity {
         selfInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getTeacherInfo();
-
-                Log.i("teacher", "teacher:"+ teacher.getName());
                 try {
+                    getTeacherInfo();
                     Thread.sleep(200);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -87,8 +85,8 @@ public class MainActivity extends AppCompatActivity {
         appointment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getCorRespondInfo();
                 try {
+                    getCorRespondInfo();
                     Thread.sleep(200);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -123,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(settingFragment == null){
                     settingFragment = new SettingFragment();
+                    settingFragment.instance(phone_number);
                     if(selfInfoFragment == null){
                         if(studentFragment == null){
                             getFragmentManager().beginTransaction().add(R.id.main_ly, settingFragment).commitNowAllowingStateLoss();
